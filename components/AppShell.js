@@ -104,21 +104,21 @@ export default function AppShell({ children, adminOnly = false }) {
   return (
     <div className="min-h-screen">
       <header className="border-b border-brand-100 bg-brand-50">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-3">
-            <h1 className="text-lg font-bold text-slate-900">Creator Analytics</h1>
-            <nav className="flex items-center gap-1">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex w-full min-w-0 flex-col gap-2 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
+            <h1 className="text-base font-bold text-slate-900 sm:text-lg">Creator Analytics</h1>
+            <nav className="flex w-full items-center gap-1 overflow-x-auto pb-1 sm:w-auto sm:overflow-visible sm:pb-0">
               {links.map((link) => (
                 <NavLink key={link.href} href={link.href} label={link.label} />
               ))}
             </nav>
           </div>
 
-          <div className="flex items-center gap-3">
-            <p className="text-sm text-slate-600">
+          <div className="flex w-full flex-wrap items-center justify-between gap-2 sm:w-auto sm:justify-end sm:gap-3">
+            <p className="max-w-full text-xs text-slate-600 sm:text-sm">
               Signed in as <span className="font-semibold">{auth.user.name}</span> ({auth.user.role})
             </p>
-            <button type="button" className="btn-secondary" onClick={handleLogout}>
+            <button type="button" className="btn-secondary px-3 py-1.5 text-xs sm:text-sm" onClick={handleLogout}>
               Logout
             </button>
           </div>

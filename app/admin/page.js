@@ -49,7 +49,7 @@ export default function AdminPage() {
       {() => (
         <div className="space-y-6">
           <div>
-            <h2 className="text-2xl font-bold">Admin Panel</h2>
+            <h2 className="text-xl font-bold sm:text-2xl">Admin Panel</h2>
             <p className="text-sm text-slate-600">Platform-wide visibility for users, creators, and analytics totals.</p>
           </div>
 
@@ -60,22 +60,22 @@ export default function AdminPage() {
             <section className="grid gap-4 md:grid-cols-3">
               <div className="card">
                 <p className="text-sm text-slate-500">Total Creators</p>
-                <p className="mt-2 text-3xl font-bold">{totals.totalCreators}</p>
+                <p className="mt-2 text-2xl font-bold sm:text-3xl">{totals.totalCreators}</p>
               </div>
               <div className="card">
                 <p className="text-sm text-slate-500">Total Followers</p>
-                <p className="mt-2 text-3xl font-bold">{totals.totalFollowers.toLocaleString()}</p>
+                <p className="mt-2 text-2xl font-bold sm:text-3xl">{totals.totalFollowers.toLocaleString()}</p>
               </div>
               <div className="card">
                 <p className="text-sm text-slate-500">Avg Engagement Rate</p>
-                <p className="mt-2 text-3xl font-bold">{totals.averageEngagementRate}%</p>
+                <p className="mt-2 text-2xl font-bold sm:text-3xl">{totals.averageEngagementRate}%</p>
               </div>
             </section>
           ) : null}
 
           <section className="card overflow-x-auto">
             <h3 className="text-lg font-semibold">Users</h3>
-            <table className="mt-4 min-w-full text-sm">
+            <table className="mt-4 min-w-[680px] text-sm">
               <thead>
                 <tr className="border-b border-slate-200 text-left text-slate-600">
                   <th className="py-2 pr-4">Name</th>
@@ -109,7 +109,7 @@ export default function AdminPage() {
 
           <section className="card overflow-x-auto">
             <h3 className="text-lg font-semibold">All Creators</h3>
-            <table className="mt-4 min-w-full text-sm">
+            <table className="mt-4 min-w-[720px] text-sm">
               <thead>
                 <tr className="border-b border-slate-200 text-left text-slate-600">
                   <th className="py-2 pr-4">Name</th>

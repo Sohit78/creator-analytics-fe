@@ -70,14 +70,14 @@ export default function CreatorDetailsPage() {
                       <div className="h-20 w-20 rounded-xl bg-slate-200" />
                     )}
                     <div>
-                      <h2 className="text-2xl font-bold">{data.creator.name}</h2>
-                      <p className="text-sm text-slate-600">
+                      <h2 className="text-xl font-bold sm:text-2xl">{data.creator.name}</h2>
+                      <p className="break-all text-sm text-slate-600">
                         {data.creator.platform} - @{data.creator.username}
                       </p>
                     </div>
                   </div>
 
-                  <button type="button" className="btn-primary" onClick={handleRefresh} disabled={refreshing}>
+                  <button type="button" className="btn-primary w-full sm:w-auto" onClick={handleRefresh} disabled={refreshing}>
                     {refreshing ? "Refreshing..." : "Refresh Analytics"}
                   </button>
                 </div>
@@ -88,19 +88,19 @@ export default function CreatorDetailsPage() {
                   <section className="grid gap-4 md:grid-cols-4">
                     <div className="card">
                       <p className="text-sm text-slate-500">Followers</p>
-                      <p className="mt-2 text-2xl font-bold">{Number(data.analytics.followers).toLocaleString()}</p>
+                      <p className="mt-2 text-xl font-bold sm:text-2xl">{Number(data.analytics.followers).toLocaleString()}</p>
                     </div>
                     <div className="card">
                       <p className="text-sm text-slate-500">Engagement Rate</p>
-                      <p className="mt-2 text-2xl font-bold">{Number(data.analytics.engagement_rate).toFixed(2)}%</p>
+                      <p className="mt-2 text-xl font-bold sm:text-2xl">{Number(data.analytics.engagement_rate).toFixed(2)}%</p>
                     </div>
                     <div className="card">
                       <p className="text-sm text-slate-500">Avg Likes</p>
-                      <p className="mt-2 text-2xl font-bold">{Number(data.analytics.avg_likes).toLocaleString()}</p>
+                      <p className="mt-2 text-xl font-bold sm:text-2xl">{Number(data.analytics.avg_likes).toLocaleString()}</p>
                     </div>
                     <div className="card">
                       <p className="text-sm text-slate-500">Avg Comments</p>
-                      <p className="mt-2 text-2xl font-bold">{Number(data.analytics.avg_comments).toLocaleString()}</p>
+                      <p className="mt-2 text-xl font-bold sm:text-2xl">{Number(data.analytics.avg_comments).toLocaleString()}</p>
                     </div>
                   </section>
 
