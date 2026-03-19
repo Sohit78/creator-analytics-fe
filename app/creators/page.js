@@ -277,22 +277,22 @@ export default function CreatorsPage() {
             {loading ? <p className="mt-3 text-slate-600">Loading creators...</p> : null}
 
             {!loading ? (
-              <table className="mt-4 min-w-[760px] text-sm">
+              <table className="mt-4 min-w-[760px] table-fixed text-sm">
                 <thead>
                   <tr className="border-b border-slate-200 text-left text-slate-600">
-                    <th className="py-2 pr-4">Creator</th>
-                    <th className="py-2 pr-4">Platform</th>
-                    <th className="py-2 pr-4">Username</th>
-                    <th className="py-2 pr-4">Followers</th>
-                    <th className="py-2 pr-4">Engagement</th>
-                    <th className="py-2 pr-4">Actions</th>
+                    <th className="w-[240px] py-2 pr-4">Creator</th>
+                    <th className="w-[110px] py-2 pr-4">Platform</th>
+                    <th className="w-[160px] py-2 pr-4">Username</th>
+                    <th className="w-[120px] py-2 pr-4">Followers</th>
+                    <th className="w-[120px] py-2 pr-4">Engagement</th>
+                    <th className="w-[190px] py-2 pr-4">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {creators.map((creator) => (
                     <tr key={creator.id} className="border-b border-slate-100">
                       <td className="py-2 pr-4">
-                        <div className="flex items-center gap-2">
+                        <div className="flex min-w-0 items-center gap-2">
                           {creator.profile_image_url ? (
                             <img
                               src={creator.profile_image_url}
@@ -302,11 +302,15 @@ export default function CreatorsPage() {
                           ) : (
                             <div className="h-8 w-8 rounded-full bg-slate-200" />
                           )}
-                          <span>{creator.name}</span>
+                          <span className="truncate" title={creator.name}>
+                            {creator.name}
+                          </span>
                         </div>
                       </td>
                       <td className="py-2 pr-4">{creator.platform}</td>
-                      <td className="py-2 pr-4">{creator.username}</td>
+                      <td className="truncate py-2 pr-4" title={creator.username}>
+                        {creator.username}
+                      </td>
                       <td className="py-2 pr-4">{creator.followers ? Number(creator.followers).toLocaleString() : "-"}</td>
                       <td className="py-2 pr-4">
                         {creator.engagement_rate ? `${Number(creator.engagement_rate).toFixed(2)}%` : "-"}
